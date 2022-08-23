@@ -1,0 +1,63 @@
+.janela-curso{
+    /* width: 100vw !important; */
+    max-width: 87vw !important;
+    float: right;
+    background-color: rgb(0, 0, 119);
+    padding: 2%;
+}
+
+.info-curso{
+    padding: 5%;
+    background-color: white;
+    width: 100%;
+    max-width: 95% !important;
+    height: 80%;
+    /* float: right; */
+    border-radius: 2%;
+    /* margin: 1% 2% !important; */
+    /* display: gr id;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(5, 200px); */
+}
+
+.info-curso-content{
+    /* grid-column: 1; */
+    /* grid-row: 1; */
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+.missao{
+    width: 40% !important;
+    margin: 5%;
+}
+
+@media only screen and (max-width: 800px) {
+    .missao{
+        width: 80% !important;
+        margin: 5%;
+    }
+}
+
+.barra-progresso{
+    display: flex;
+    height: 2rem;
+    background-color: #dfe0e1;
+    border-radius: 0.25rem;
+    text-align: center;
+}
+
+.progresso-concluido{
+    width: 50%;
+    /* height: 100%; */
+    background-color: green;
+    color: white;
+    justify-content: center;
+}
+
+.progresso-concluido p {
+    margin: 3px 230px;
+
+}

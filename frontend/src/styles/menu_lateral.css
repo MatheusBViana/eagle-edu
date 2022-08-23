@@ -1,0 +1,23 @@
+.menu-lateral{
+    width: 12.1vw !important;
+    height: 100vh !important;
+    position: absolute;
+    /* padding: 1%; */
+}
+
+.menu-lateral-content{
+    margin-left: 3%;
+}
+
+.menu-lateral-botao-cursos{
+    width: 100% !important;
+    height: 7vh;
+    /* color: white; */
+    padding: 5% 1%;
+}
+
+.menu-lateral-botao-cursos:hover{
+    cursor: pointer;
+    background-color: #f3f1fa;
+
+}

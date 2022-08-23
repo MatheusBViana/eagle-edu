@@ -1,0 +1,26 @@
+.header{
+    height: 100px;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+}
+
+.header-profile{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.language{
+    border: none;
+    font-size: 20px;
+    color: #585858;
+    margin-right: 15px;
+}
+
+.header-profile img{
+    width: 70px;
+    height: 70px;
+    margin: auto 15px;
+    border-radius: 100%;
+}
