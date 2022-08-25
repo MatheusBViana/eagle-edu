@@ -1,8 +1,11 @@
-import React from 'react';
+import React from 'react';  
 import '../styles/menu_lateral.css';
 import Axios from 'axios';
+import styled from 'styled-components';
 
 function Menu(){
+
+
 
     const handle_curso = async () =>{
         await Axios.get("http://localhost:3001/").then((response) =>{

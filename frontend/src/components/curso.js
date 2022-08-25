@@ -1,8 +1,10 @@
 import React from 'react';
-import Assuntos from './assuntos';
+// import Assuntos from './assuntos';
 import '../styles/curso.css';
+import '../styles/assuntos.css';
 import {useEffect, useState} from 'react';
 import Axios from 'axios';
+import {Link} from 'react-router-dom';
 
 import {Container, Row, Col} from 'react-bootstrap';
 
@@ -10,32 +12,40 @@ function Course(){
     useEffect(() =>{
         handle_curso();
     }, []);
-    const [items, setItems] = useState([]);
+    const [subjects, setSubjects] = useState([]);
+
+    const [stateSidebar, setstateSidebar] = useState(localStorage.getItem('sidebar'));
+    setInterval(() => setstateSidebar(localStorage.getItem('sidebar')), 50);
+
 
     const handle_curso = async () =>{
-        await Axios.get("http://localhost:3001/").then((response) =>{
+        await Axios.get("http://localhost:3001/curso/1/assunto").then((response) =>{
             console.log(response.data);
-            setItems(response.data);
+            setSubjects(response.data);
         }).catch((error) =>{
             console.log(error);
         })
     }
-    console.log(items);
+
+    
+    console.log(subjects);
 
     let retorno = '';
-    if(items){
-        retorno = items.map(item => 
-        <div className="missao" key={item.idassunto}>
-            <img className="assunto-icone" src="https://cdn-icons-png.flaticon.com/512/25/25404.png"/>
-            <p className="titulo-assunto">{item.nomeassunto}</p>
+    if(subjects){
+        retorno = subjects.map(item => 
+        <div className="assunto-div" key={item.id}>
+            <img className="assunto-icone" src={item.img}/>
+            <br/>
+            <br/>
+            <Link to={`/mission/${item.title}?${item.id}`} className="titulo-assunto">{item.title}</Link>
             <div className="barra-progresso">
-                <div className="progresso-concluido"><p>{item.progresso}/</p></div>
+                <div className="progresso-concluido" style={{width: `${item.progress}%`}}><p>{item.progress}%</p></div>
             </div>
         </div>
         );
     }
     return (
-        <Container className="janela-curso">
+        <Container className={`janela-curso-${stateSidebar}`}>
             <Container className="info-curso">
                 <Container className="info-curso-content">
                     {retorno}
