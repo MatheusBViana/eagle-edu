@@ -1,0 +1,50 @@
+.mission-window{
+    max-width: 87vw !important;
+    float: right;
+    background-color: rgb(0, 0, 119);
+    padding: 2%;
+}
+
+.white-window{
+    padding: 5%;
+    background-color: white;
+    width: 100%;
+    max-width: 95% !important;
+    height: 80%;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.mission-content{
+    text-align: center;
+    /* display: flex; */
+    /* flex-wrap: wrap; */
+}
+
+.button-finish{
+    cursor: pointer;
+    background-color: darkblue;
+    padding: 3%;
+    font-size: 20px;
+    height: 8vh;
+    justify-content: center;
+    color: white;
+}
+
+
+.mission-text{
+    background-color: grey;
+    padding: 2%;
+    text-align: center;
+    border-radius: .5em;
+    color: white;
+    width: 100%;
+    font-size: 1.2em;
+    text-decoration: none;
+}
+
+
+.mission{
+    width: 40% !important;
+    margin: 5% auto;
+}
