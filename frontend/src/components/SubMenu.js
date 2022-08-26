@@ -45,6 +45,7 @@ const SubMenu = ({ item }) => {
   const [subnav, setSubnav] = useState(false);
 
   const showSubnav = () => setSubnav(!subnav);
+  console.log(item.subNav[0]);
   return (
     <>
       <SidebarLink to={item.path} onClick={item.subNav && showSubnav}>
@@ -61,11 +62,12 @@ const SubMenu = ({ item }) => {
         </div>
       </SidebarLink>
       {subnav &&
-        item.subNav.map((item, index) => {
-          let path = item.path;
+        item.subNav[0].map((item, index) => {
+          console.log(item);
+          let path = item.title;
           path = path.replace(/\s/g, '');
           return (
-            <DropdownLink to={path} key={index}>
+            <DropdownLink to={`course/${item.id}`} key={index}>
               {item.icon}
               <SidebarLabel>{item.title}</SidebarLabel>
             </DropdownLink>

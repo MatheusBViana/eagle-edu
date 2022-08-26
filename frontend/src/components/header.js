@@ -69,15 +69,14 @@ function Header(){
     return (
         <div className="header">
           {sidebar ? 
-          <div className="header-logo">
+          <Link to="/" className="header-logo">
               <img src="https://eagle-edu.com.br/app/images/logo-text.svg"></img>
-              <a href="https://eagle-edu.com.br/"></a>
-          </div>
+          </Link>
           : 
-          <div className="header-logo-collapsed">
+          <Link to="/" className="header-logo-collapsed">
               <img style={{width: '45%', marginTop: '6%'}} src="https://i.imgur.com/HbHuP32.png"></img>
               <a href="https://eagle-edu.com.br/"></a>
-          </div>
+          </Link>
         }
         <IconContext.Provider value={{ color: '#fff' }}>
         <Nav>
