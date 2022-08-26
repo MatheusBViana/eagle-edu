@@ -1,14 +1,27 @@
 import logo from './logo.svg';
 import Header from './components/header';
 import Curso from './components/curso';
-import Menu from './components/menu_lateral';
+import Mission from './components/mission';
+import Home from './components/home';
+
+import {
+  BrowserRouter,
+  Routes,
+  Route
+} from "react-router-dom";
 
 function App() {
   return (
     <div>
+      <BrowserRouter>
       <Header />
-      <Menu />
-      <Curso />
+        <Routes>
+          <Route path="/" element={<Home />}/>
+          <Route path="/course" element={<Curso />}/>
+          <Route path="/course/:subject" element={<Curso />}/>
+          <Route path="/mission/:subject" element={<Mission />}/>
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
