@@ -11,24 +11,3 @@ module.exports.getCursos = (req, res) => {
 module.exports.getCursoById = (req, res) => {
     subjectModel.findByPk(req.params.id).then(curso => res.send(curso));
 }
-
-// Atualiza o nome do curso
-module.exports.updateCurso = (req, res) => {
-    subjectModel.update(
-        {
-            name: req.body.name
-        }, 
-        {
-            where: {id: req.body.id}
-        }
-    ).then(() => res.send("Success"));
-}
-
-// Deleta um curso
-module.exports.deleteCurso = (req, res) => {
-    subjectModel.destroy({
-        where: {
-            id: req.params.id
-        }
-    }).then(() => res.send("Success"));
-}
