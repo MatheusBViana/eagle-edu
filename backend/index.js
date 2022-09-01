@@ -2,20 +2,12 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const cors = require('cors');
-// const modelos = require("./models");
 const modelCourse = require("./models/curso");
 const modelSubject = require("./models/assunto");
 const modelMission = require("./models/mission");
 
 app.use(bodyParser.json());
 app.use(cors());
-
-
-// modelos.Curso.hasMany(modelos.Assunto,{
-//     onDelete: 'CASCADE'
-// });
-
-// modelos.Assunto.belongsTo(modelos.Curso);
 
 const sequelize = require('./utils/database');
 
